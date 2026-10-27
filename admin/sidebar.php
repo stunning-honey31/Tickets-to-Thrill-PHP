@@ -1,0 +1,48 @@
+<?php
+if (!defined('ADMIN_ROUTER')) {
+    header('Location: ../login.php');
+    exit;
+}
+?>
+<aside class="admin-sidebar">
+  <a href="index.php" class="admin-logo" style="display:flex; align-items:center; gap:9px; white-space:nowrap;">
+    <svg viewBox="0 0 64 64" width="26" height="26" role="img" aria-hidden="true" style="flex-shrink:0;">
+      <defs>
+        <linearGradient id="adminLogoGrad" x1="10%" y1="0%" x2="90%" y2="100%">
+          <stop offset="0%" stop-color="#33206E"/>
+          <stop offset="55%" stop-color="#241454"/>
+          <stop offset="100%" stop-color="#5E2CC0"/>
+        </linearGradient>
+        <clipPath id="adminLogoClip">
+          <rect x="1" y="1" width="62" height="62" rx="17"/>
+        </clipPath>
+      </defs>
+      <g clip-path="url(#adminLogoClip)">
+        <rect x="1" y="1" width="62" height="62" fill="url(#adminLogoGrad)"/>
+        <path d="M8 38 C 13 21, 20 21, 24 32 C 27 40, 30 40, 33 32 C 37 21, 44 21, 49 30 C 52 35, 54 37, 57 38"
+              fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24.5" cy="31.5" r="6.4" fill="none" stroke="#FFFFFF" stroke-width="2.6"/>
+        <g transform="translate(38,23) rotate(-24)">
+          <rect x="-5" y="-3.6" width="10" height="7.2" rx="1.8" fill="#FF4D5E"/>
+          <circle cx="-2.8" cy="4" r="1.5" fill="#1F1435"/>
+          <circle cx="2.8" cy="4" r="1.5" fill="#1F1435"/>
+        </g>
+        <g transform="translate(50,14)">
+          <path d="M0 -6.5 L1.7 -1.7 L6.5 0 L1.7 1.7 L0 6.5 L-1.7 1.7 L-6.5 0 L-1.7 -1.7 Z" fill="#FFC93C"/>
+        </g>
+        <rect x="1" y="55" width="62" height="8" fill="#FFC93C"/>
+      </g>
+    </svg>
+    T2T Admin
+  </a>
+  <nav class="admin-nav">
+    <a href="index.php?page=home"<?= $activeAdmin === 'home' ? ' class="active"' : '' ?>>📊 Dashboard</a>
+    <a href="index.php?page=user_list"<?= $activeAdmin === 'user_list' ? ' class="active"' : '' ?>>👤 Users</a>
+    <a href="index.php?page=ticket_list"<?= $activeAdmin === 'ticket_list' ? ' class="active"' : '' ?>>🎫 Tickets</a>
+    <a href="index.php?page=messages"<?= $activeAdmin === 'messages' ? ' class="active"' : '' ?>>✉️ Messages</a>
+  </nav>
+  <div class="admin-sidebar-foot">
+    <a href="../myaccount.php">← Back to site</a>
+    <a href="../logout.php">⎋ Log out</a>
+  </div>
+</aside>
